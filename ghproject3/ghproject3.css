@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background: lightskyblue;
+  }
+  .source {
+    display: flex;
+    justify-content: center;
+  }
+  #calendar-container {
+    max-width: 1500px;
+    min-height: 1000px;
+    background-color: white;
+    margin: 50px auto;
+    position: relative;
+    -webkit-box-shadow: -6px -1px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: -6px -1px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: -6px -1px 24px 0px rgba(66, 68, 90, 1);
+  }
+  .calendar-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: azure;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  }
+  .title-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em; /* 32px padding = 16px * 2 */
+  }
+  
+  /* NET GRID */
+  .monhts {
+    width: 100%;
+    border: 1px solid #b8b8b8;
+    padding: 1em 1.5em;
+  }
+  .calendar-styles-grid {
+    padding: 2em;
+  }
+  .calendar-grid {
+    display: grid;
+  
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* NET GRID */
+  
+  /* SECOND NET GRID */
+  
+  .monhts-title {
+    min-height: 30px;
+  }
+  .monhts-grid {
+    min-height: calc(100%-50px);
+  }
+  
+  .monhts-title h2 {
+    text-transform: uppercase;
+  }
+  .monhts-grid {
+    padding-top: 0.5em;
+    padding-bottom: 0.8em;
+    display: grid;
+  
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    row-gap: 3px;
+    column-gap: 1px;
+  }
+  .monhts-grid > div {
+    font-weight: 600;
+  }
+  .week-days {
+    margin-bottom: 7px;
+    font-weight: 600;
+  }
+  .disabled {
+    opacity: 0.5;
+    font-weight: 400 !important;
+  }
+  /* SECOND NET GRID */
+  
+  /* MONTHS MODIFIERS */
+  .monhts:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    cursor: pointer;
+  }
+  .january:hover {
+    background-color: lightblue;
+  }
+  .february:hover {
+    background-color: lightgreen;
+  }
+  .march:hover {
+    background-color: #0066ff;
+  }
+  .april:hover {
+    background-color: #6666cc;
+  }
+  .may:hover {
+    background-color: #ffccff;
+  }
+  .june:hover {
+    background-color: #ffcc99;
+  }
+  .july:hover {
+    background-color: rgb(255, 239, 213);
+  }
+  .august:hover {
+    background-color: rgb(175, 238, 238);
+  }
+  .september:hover {
+    background-color: rgb(221, 160, 221);
+  }
+  .october:hover {
+    background-color: rgb(250, 65, 65);
+  }
+  .november:hover {
+    background-color: rgb(255, 255, 96);
+  }
+  .december:hover {
+    background-color: rgb(182, 255, 188);
+  }
+  
+  /* MONTHS MODIFIERS */
+  
+  /* MEDIA QUERIES */
+  @media only screen and (min-width: 901px) and (max-width: 1199px) {
+    body {
+      background-color: lightsalmon;
+    }
+    .calendar-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    body {
+      background-color: lightgreen;
+    }
+    #calendar-container {
+      display: grid;
+  
+      justify-items: center;
+      align-content: center;
+    }
+    .calendar-container {
+      display: grid;
+  
+      justify-items: center;
+      align-content: center;
+    }
+    .calendar-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .title-header h1:first-child {
+      text-align: left;
+      margin-right: 0.5em;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    body {
+      background-color: lightcoral;
+    }
+    .calendar-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
